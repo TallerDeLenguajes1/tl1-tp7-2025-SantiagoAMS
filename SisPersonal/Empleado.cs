@@ -18,7 +18,7 @@ public class Empleado
     ///////////////////////////////////////////////////// Encapsulamiento
     public string Nombre { get => nombre; set => nombre = value; }
     public string Apellido { get => apellido; set => apellido = value; }
-    public char EstadoCivil { get => estadoCivil;  set =>estadoCivil = value;}
+    public char EstadoCivil { get => estadoCivil; set => estadoCivil = value; }
     public DateTime FechaNacimiento { get => FechaNacimiento; set => fechaNacimiento = value; }
     public DateTime FechaIngreso { get => fechaIngreso; set => fechaIngreso = value; }
     public double SueldoBasico { get => sueldoBasico; set => sueldoBasico = value; }
@@ -53,19 +53,18 @@ public class Empleado
 
     public double Salario()
     {
-        double extra = 0;
         int ant = Antiguedad();
-        double porcAnt = 0;
-        porcAnt = ant < 20 ? Antiguedad() : 25;
+
+        double adicional = (sueldoBasico * (ant < 20 ? ant : 25))/ 100;
         if (cargo == Cargos.Ingeniero || cargo == Cargos.Especialista)
         {
-            porcAnt *= 1.5;
+            adicional *= 1.5;
         }
         if (EsCasado())
         {
-            extra = 150000;
+            adicional += 150000;
         }
-        return sueldoBasico + extra + sueldoBasico * porcAnt;
+        return sueldoBasico + adicional;
 
         /*Calcular el salario, de acuerdo a la fórmula: Salario = Sueldo Básico +
     Adicional. Para ello el Adicional contempla la antigüedad en años, el
