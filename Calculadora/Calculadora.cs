@@ -3,33 +3,33 @@ namespace EspacioCalculadora;
 public class Calculadora
 {
 
-    private double dato;
-    void Sumar(double termino)
+    private double dato =0;
+    public void Sumar(double termino)
     {
-
+        dato += termino;
     }
 
-    void Restar(double termino)
+    public void Restar(double termino)
     {
-
+        dato -= termino;
     }
 
-    void Multiplicar(double termino)
+    public void Multiplicar(double termino)
     {
-
+        dato *= termino;
     }
 
-    void Dividir(double termino)
+    public void Dividir(double termino)
     {
-
+        dato /= termino;
     }
 
-    void Limpiar()
+    public void Limpiar()
     {
-
+        dato = 0;
     }
 
-    double Resultado
+    public double Resultado
     {
         get
         {
