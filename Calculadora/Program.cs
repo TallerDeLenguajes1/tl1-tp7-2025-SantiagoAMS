@@ -41,9 +41,10 @@ while (opc != 6)
             c.Multiplicar(val);
             break;
         case 4:
-            if (Math.Abs(val) <= 0.000001)
+            if (Math.Abs(val) <= 0.00000000001) // Cota de error, para que el usuario no se haga el listo y ponga un 0.0000....0
             {
                 PrintError("No se puede hacer una división por cero...");
+                Pausa();
                 break;
             }
             c.Dividir(val);
@@ -71,7 +72,7 @@ static int LeerEntero(string texto = "Ingresá un número entero")
         {
             return ret;
         }
-        PrintError("Error, no ingresaste un número...");
+        PrintError("Error, no ingresaste un entero...");
     }
 }
 
