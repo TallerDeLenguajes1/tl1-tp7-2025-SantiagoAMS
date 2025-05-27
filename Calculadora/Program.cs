@@ -2,26 +2,19 @@
 
 Calculadora c = new Calculadora();
 
-c.Sumar(10);
-Console.WriteLine("Mas 10: " + c.Resultado);
 
-c.Sumar(10);
-Console.WriteLine("Mas 10: " + c.Resultado);
+int opc = 0;
 
-c.Sumar(10);
-Console.WriteLine("Mas 10: " + c.Resultado);
+while (true)
+{
+    Console.WriteLine("=====================");
+    Console.WriteLine(" 1 - Sumar");
+    Console.WriteLine(" 2 - Restar");
+    Console.WriteLine(" 3 - Multiplicar");
+    Console.WriteLine(" 4 - Dividir");
+    Console.WriteLine(" 5 - Limpiar");
+    Console.WriteLine(" 6 - Salir");
+    Console.WriteLine("=====================");
 
-c.Sumar(10);
-Console.WriteLine("Mas 10: " + c.Resultado);
-
-c.Multiplicar(10);
-Console.WriteLine("Por 10: " + c.Resultado);
-
-c.Dividir(10);
-Console.WriteLine("div 10: " + c.Resultado);
-
-c.Dividir(10);
-Console.WriteLine("div 10: " + c.Resultado);
-
-c.Dividir(10);
-Console.WriteLine("div 10: " + c.Resultado);
+    
+}
