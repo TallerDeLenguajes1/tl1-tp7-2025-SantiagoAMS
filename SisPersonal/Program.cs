@@ -1,10 +1,17 @@
 ﻿using Sistema;
 
-Empleado e = new Empleado();
+Empleado a = new Empleado();
+Empleado b = new Empleado();
+Empleado c = new Empleado();
 
-e.FechaIngreso = new DateTime(2020, 1, 1);
-e.FechaNacimiento = new DateTime(1975, 02, 27);
+a.FechaIngreso = new DateTime(2020, 1, 1);
+a.FechaNacimiento = new DateTime(2025 - 60, 02, 27);
 
-Console.WriteLine("Edad: " + e.Edad());
-Console.WriteLine("Años para jubilarse: " + e.AñosParaJubilarse());
-Console.WriteLine("Antiguedad: "+e.Antiguedad());
+b.FechaIngreso = new DateTime(2020, 1, 1);
+b.FechaNacimiento = new DateTime(2025 - 60, 02, 27);
+
+c.FechaIngreso = new DateTime(2020, 1, 1);
+c.FechaNacimiento = new DateTime(2025 - 60, 02, 27);
+
+
+Console.WriteLine();
