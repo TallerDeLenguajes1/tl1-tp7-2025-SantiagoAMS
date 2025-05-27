@@ -8,7 +8,7 @@ ConsoleColor bg = Console.BackgroundColor;
 ConsoleColor fg = Console.ForegroundColor;
 while (opc != 6)
 {
-
+    Console.Clear();
     Console.WriteLine("=====================");
     Console.WriteLine(" 1 - Sumar");
     Console.WriteLine(" 2 - Restar");
@@ -18,11 +18,11 @@ while (opc != 6)
     Console.WriteLine(" 6 - Salir");
     Console.WriteLine("=====================");
     Console.ForegroundColor = ConsoleColor.DarkCyan;
-    Console.BackgroundColor= ConsoleColor.Black;
+    Console.BackgroundColor = ConsoleColor.Black;
     Console.WriteLine("Valor: '" + c.Resultado + "'");
     Console.ForegroundColor = fg;
     Console.BackgroundColor = bg;
-    opc = LeerEntero();
+    opc = LeerEntero("Ingresá la opción");
 
     if (opc <= 4)
     {
@@ -41,13 +41,19 @@ while (opc != 6)
             c.Multiplicar(val);
             break;
         case 4:
+            if (Math.Abs(val) <= 0.000001)
+            {
+                PrintError("No se puede hacer una división por cero...");
+                break;
+            }
             c.Dividir(val);
             break;
         case 5:
             c.Limpiar();
             break;
-        case 7:
+        default:
             PrintError("Opción incorrecta...");
+            Pausa();
             break;
     }
 

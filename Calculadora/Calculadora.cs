@@ -31,10 +31,7 @@ public class Calculadora
 
     public double Resultado
     {
-        get
-        {
-            return dato;
-        }
+        get => dato;
     }
 
 }
