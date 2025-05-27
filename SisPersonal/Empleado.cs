@@ -9,15 +9,16 @@ public class Empleado
     private string nombre;
     private string apellido;
     private DateTime fechaNacimiento;
-    private char estadoCivil;
+    private char estadoCivil = 's';
     private DateTime fechaIngreso;
-    private double sueldoBasico;
-    private Cargos cargo;
+    private double sueldoBasico = 0;
+    private Cargos cargo = Cargos.Auxiliar;
 
 
     ///////////////////////////////////////////////////// Encapsulamiento
     public string Nombre { get => nombre; set => nombre = value; }
     public string Apellido { get => apellido; set => apellido = value; }
+    public char EstadoCivil { get => estadoCivil;  set =>estadoCivil = value;}
     public DateTime FechaNacimiento { get => FechaNacimiento; set => fechaNacimiento = value; }
     public DateTime FechaIngreso { get => fechaIngreso; set => fechaIngreso = value; }
     public double SueldoBasico { get => sueldoBasico; set => sueldoBasico = value; }
