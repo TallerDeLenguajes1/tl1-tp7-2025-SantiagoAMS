@@ -19,7 +19,7 @@ public class Empleado
     public string Nombre { get => nombre; set => nombre = value; }
     public string Apellido { get => apellido; set => apellido = value; }
     public char EstadoCivil { get => estadoCivil; set => estadoCivil = value; }
-    public DateTime FechaNacimiento { get => FechaNacimiento; set => fechaNacimiento = value; }
+    public DateTime FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
     public DateTime FechaIngreso { get => fechaIngreso; set => fechaIngreso = value; }
     public double SueldoBasico { get => sueldoBasico; set => sueldoBasico = value; }
     public Cargos Cargo { get => cargo; set => cargo = value; }

@@ -5,7 +5,7 @@ Empleado b = new Empleado();
 Empleado c = new Empleado();
 
 a.FechaIngreso = new DateTime(2025-14, 1, 1);
-a.FechaNacimiento = new DateTime(2025 - 55, 02, 27);
+a.FechaNacimiento = new DateTime(2025 - 52, 02, 27);
 a.SueldoBasico = 90000000;
 a.Cargo = Empleado.Cargos.Auxiliar;
 a.Apellido = "Messi";
@@ -13,20 +13,20 @@ a.Nombre = "Cristiano";
 a.EstadoCivil = 'c';
 
 b.FechaIngreso = new DateTime(2025-20, 1, 1);
-b.FechaNacimiento = new DateTime(2025 - 55, 02, 27);
+b.FechaNacimiento = new DateTime(2025 - 61, 02, 27);
 b.SueldoBasico = 650000;
 b.Cargo = Empleado.Cargos.Ingeniero;
-a.Apellido = "Gentile";
-a.Nombre = "Nate";
-a.EstadoCivil = 's';
+b.Apellido = "Gentile";
+b.Nombre = "Nate";
+b.EstadoCivil = 's';
 
 c.FechaIngreso = new DateTime(2025-16, 1, 1);
-c.FechaNacimiento = new DateTime(2025 - 55, 02, 27);
+c.FechaNacimiento = new DateTime(2025 - 45, 02, 27);
 c.SueldoBasico = 650000;
 c.Cargo = Empleado.Cargos.Especialista;
 c.EstadoCivil = 'c';
-a.Apellido = "Mason";
-a.Nombre = "Ibai";
+c.Apellido = "Kojimba";
+c.Nombre = "Fideo";
 
 Empleado[] empleados = { a, b, c };
 Empleado proxJub = null;
@@ -37,7 +37,7 @@ foreach (Empleado e in empleados)
     sum += e.Salario();
     proxJub ??= e;
     if (proxJub != e) {
-        if (e.FechaNacimiento > proxJub.FechaNacimiento)
+        if (e.FechaNacimiento < proxJub.FechaNacimiento)
         {
             proxJub = e;
         }    
@@ -46,10 +46,13 @@ foreach (Empleado e in empleados)
 
 if (proxJub != null)
 {
+
     Console.WriteLine("Empleado mas proximo a jubilarse:");
     Console.WriteLine($"\tNombre: {proxJub.Apellido}, {proxJub.Nombre}");
-    Console.WriteLine($"\tEdad: {proxJub.Edad}");
+    Console.WriteLine($"\tEdad: {proxJub.Edad()}");
     Console.WriteLine($"\tAntiguedad: {proxJub.Antiguedad()}");
     Console.WriteLine($"\tPara jubilarse: {proxJub.AñosParaJubilarse()} años");
     Console.WriteLine($"\tSalario: ${proxJub.Salario().ToString("#,##.00")}");
 }
+
+Console.WriteLine($"\nCantidad a pagarle a todos los empleados: ${sum.ToString("#,##.00")}");
